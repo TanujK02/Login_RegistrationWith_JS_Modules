@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+      span
+      {
+            fontstyle:bold;
+ 		    color:red;
+      }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="./login.js"></script>
+<script src="./register.js"></script>
+<script type="text/javascript">
+
+/* $(function()
+		{
+			 
+	         $("#sidname").hide();
+	         $("#sidemail").hide();
+	         $("#sidpass").hide();
+	         $("#sidconfpass").hide();
+	         
+	         var name_error = false;
+	         var mail_error = false;
+	         var pass_error = false;
+	         var conpass_error = false;
+	         
+	    $("#idname").focusout(function()
+		        				   { 
+		    	 					  
+		    	 					    checkUserName();
+		        				   }
+	        		         );
+	    
+	    $("#idemail").focusout(function()
+								   { 
+									  
+									    checkEmail();
+								   }
+	          				 );
+	    
+	    $("#idpass").focusout(function()
+								   { 
+									  
+									    checkPassword();
+								   }
+	         				 );
+	    
+		$("#idconfpass").focusout(function()
+								   { 
+									  
+									    checkConfPassword();
+								   }
+							 );
+		
+			function checkUserName()
+				{
+					var nameLength = $("#idname").val().length;
+					var name = $("#idname").val();
+					if( name == null || name == "")
+						{
+							$("#sidname").html("Don't keep Name field empty");
+							$("#sidname").show();
+							name_error = true;
+						}
+					else if(nameLength<3)
+						{
+							$("#sidname").html("Name should contain at least 3 characters");
+							$("#sidname").show();
+							name_error = true;
+						}
+					else if(!isNaN(name))
+						{
+							$("#sidname").html("Name should contain alphabates");
+							$("#sidname").show();
+							name_error = true;
+						}
+					else
+						{
+							$("#sidname").hide();							
+						}
+				}
+			
+			function checkEmail()
+			{
+				var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+				var email = $("#idemail").val();
+				if(email == null || email =="")
+				 {
+				        $("#sidemail").html("Don't keep Email field empty");
+						$("#sidemail").show();
+						mail_error = true;
+				 }
+			     else if(!mailformat.test(email))
+					 {
+				    	    $("#sidemail").html("Please Enter a valid Email Id");
+							$("#sidemail").show();
+							mail_error = true;
+					        
+					 }
+			     else
+			    	 {
+			    	 		$("#sidemail").hide();
+			    	 }
+			}
+			
+			function  checkPassword()
+			{
+				
+				    var pass = $("#idpass").val();
+				    var passformat = /^(?=.*\d)(?=.*[a-zA-Z]).{6,20}$/
+					if(pass == null || pass =="")
+					 {
+							$("#sidpass").html("Don't keep Password field empty");
+							$("#sidpass").show();
+							pass_error = true;
+					 }
+			     else if(pass.length<6)
+					 {
+				    	 	$("#sidpass").html("Length of password should be at least 6 characters");
+							$("#sidpass").show();
+							pass_error = true;
+					 }
+			     else if(!passformat.test(pass))
+					 {
+				    	 	$("#sidpass").html("Password must contain at least one alphabate and one digit");
+							$("#sidpass").show();
+							pass_error = true;
+					 }
+			     else
+			    	 {
+			    	 		$("#sidpass").hide();
+			    	 }
+			}
+			
+			function  checkConfPassword()
+			{
+					
+				    var confpass = $("#idconfpass").val();
+				    var pass = $("#idpass").val();
+					if(confpass == null || confpass =="")
+					 {
+							$("#sidconfpass").html("Don't keep confirm Password field empty");
+							$("#sidconfpass").show();
+							conpass_error = true;
+					 }
+					 else if(pass != confpass)
+			    	 {      
+						    
+						    $("#sidconfpass").html("Both Password and confirm password should matched");
+							$("#sidconfpass").show();
+							conpass_error = true;
+			    	 }
+				     else
+				     {
+				    	 	$("#sidconfpass").hide();
+				     }
+			}
+			
+			$("#submitBttnRegister").click(function()
+					{
+				
+						
+					 	 name_error = false;
+			         	 mail_error = false;
+			         	 pass_error = false;
+			          	 conpass_error = false;
+			          	 
+			          	 checkUserName();
+			          	 checkEmail();
+			          	 checkPassword();
+			          	 checkConfPassword();
+			          	
+			          	
+			          	if( name_error == false && mail_error == false && pass_error == false 
+			          	    &&  conpass_error == false)
+			          	   {
+			          		    
+								return true;
+			          	   }
+			          	else 
+			          		{
+			          		 
+			          		    return false;
+			          		}
+					}
+		  );
+		}
+  );
+   */
+	
+    $(document).ready(function(){
+    	$("#bttn_login").click( function()
+    			{
+    				$("#idLogin").css('display','block');
+    				$("#idRegister").css('display','none');
+    				
+    			}
+    			
+    	);
+    	$("#bttn_reg").click( function()
+    			{
+    				$("#idRegister").css('display','block');
+    				$("#idLogin").css('display','none');
+    			}
+    			
+    	);
+       	
+    } );
+</script>
+</head>
+<body>
+
+
+	<div id="selectOne"   style="background-color:lightblue;">
+	    		<table>
+	    		     <tr>
+	    		         <td><span>  Do You want to Login :</span></td>
+	    		         <td><button id="bttn_login" >Login</button></td>
+	    		     </tr>
+	    		     <tr>
+	    		         <td><span>  Do You want to Register :</span></td>
+	    		         <td><button id="bttn_reg" >Register</button></td>
+	    		     </tr>
+	    		</table>
+	</div>
+	<div id="idLogin"   style="background-color:lightgreen;display:none;">
+		<form id="idloginform" name="loginform" action="login-successfull.jsp" method="GET" onsubmit="return login.validate()" >
+			<table>
+				<tr>
+					<th align="left">Login Here</th>
+				</tr>
+				<tr>
+					<td>Email:</td>
+					<td><input type="text" id="idlemail" name="loginemail" placeholder="Please Enter your Email Id"></td>
+				</tr>
+				<tr>
+					<td><span id="sidlemail"></span></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input type="text" id="idlpass" name="loginpass" placeholder="Please Enter your Password"></td>					
+				</tr>
+				<tr>
+					<td><span id="sidlpass"></span></td>
+				</tr>
+				<tr>
+					<td><button type="submit" id="submitBttnLogin">SUBMIT</button></td>
+				</tr>
+			</table>			
+		</form>	     	    
+	</div>
+
+	<div id="idRegister" style="background-color:yellow;display:none;">
+		<form id="idregform" action="register-successfull.jsp" method="POST" onsubmit="return register.validate()">
+			<table>
+				<tr>
+					<th align="left">Register Here</th>
+				</tr>
+				<tr>
+					<td>Name:</td>
+					<td><input type="text" id="idname" name="name" placeholder="Please Enter your Name here"></td>
+				</tr>
+				<tr>
+					<td><span id="sidname"></span></td>
+				</tr>
+				<tr>
+					<td>Email:</td>
+					<td><input type="text" id="idemail" name="email" placeholder="Please Enter your Email Id"></td>
+				</tr>
+				<tr>
+					<td><span id="sidemail"></span></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input type="text" id="idpass" name="pass" placeholder="Please Enter your Password"></td>					
+				</tr>
+				<tr>
+					<td><span id="sidpass"></span></td>
+				</tr>
+				<tr>
+					<td>Confirm Password:</td>
+					<td><input type="text" id="idconfpass" name="confpass" placeholder="Please Re-enter your Password"></td>					
+				</tr>
+				<tr>
+					<td><span id="sidconfpass"></span></td>
+				</tr>
+				<tr>
+					<td><button type="submit" id="submitBttnRegister">SUBMIT</button></td>
+				</tr>
+			</table>
+		</form>	   
+		
+	</div>
+</body>
+</html>
