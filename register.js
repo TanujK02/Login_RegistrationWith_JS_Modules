@@ -3,12 +3,12 @@ var register = (function(){
 	
 	
 	function validate(){
-		alert("hi");
 		
-		 var name = document.idregform.name.value;
-	     var email = document.idregform.email.value;
-	     var pass = document.idregform.pass.value;
-	     var confpass = document.idregform.confpass.value;
+		
+		 var name = document.regform.name.value;
+	     var email = document.regform.email.value;
+	     var pass = document.regform.pass.value;
+	     var confpass = document.regform.confpass.value;
 	     
 	     
 	     
@@ -21,9 +21,10 @@ var register = (function(){
 	    	  || confpass == null || confpass ==""  ||  pass != confpass
 	       )
 	     {
-	    	 alert("hi");
+	    	
 	    	 if(name == null || name =="")
 	    	 {
+	    		 alert("hi name is null");
 	    	        document.getElementById('sidname').innerHTML="** Please Enter your Name";
 	    	 		//return false;
 	    	 }   	 
@@ -90,13 +91,14 @@ var register = (function(){
 		     	 }
 		     
 		     return false;
-	     }
+		     }
 	     
 	     else
 	     	{
 			    	 alert('true');
 			         return true;
 	     	}
+			
 	}
 	
 	return {
